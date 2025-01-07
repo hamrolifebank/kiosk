@@ -48,7 +48,7 @@ export function MainPage() {
     setCurrentSlide(slideUrl);
     slideCount++;
 
-    const duration = nextSlide.duration || 2000;
+    const duration = nextSlide.duration || 10000;
 
     // Clear any existing timeouts before setting a new one
     if (timeoutId) clearTimeout(timeoutId);
