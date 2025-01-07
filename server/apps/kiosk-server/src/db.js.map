@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../apps/kiosk-server/src/db.ts"],
+  "sourcesContent": ["// src/db.ts\n\nimport { Pool } from 'pg';\n\n// Set up the PostgreSQL connection pool using environment variables\nconst pool = new Pool({\n  user: process.env.PG_USER,\n  host: process.env.PG_HOST,\n  database: process.env.PG_DB,\n  password: process.env.PG_PASS,\n  port: parseInt(process.env.PG_PORT ?? '5432'),\n});\n\nexport default pool;\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;AAAA;AAAA;AAAA;AAAA;AAAA;AAEA,gBAAqB;AAGrB,MAAM,OAAO,IAAI,eAAK;AAAA,EACpB,MAAM,QAAQ,IAAI;AAAA,EAClB,MAAM,QAAQ,IAAI;AAAA,EAClB,UAAU,QAAQ,IAAI;AAAA,EACtB,UAAU,QAAQ,IAAI;AAAA,EACtB,MAAM,SAAS,QAAQ,IAAI,WAAW,MAAM;AAC9C,CAAC;AAED,IAAO,aAAQ;",
+  "names": []
+}

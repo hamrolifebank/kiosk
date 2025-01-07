@@ -1,26 +1,21 @@
-import CountBtn from "@/components/count-btn";
-import ReactSVG from "@/assets/react.svg";
-import { Badge } from "@/components/ui/badge";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import MainPage from './pages/main';
+import { PhotoPage } from './pages/photo';
+import { StatsAge } from './pages/stats-age';
+import { StatsBlood } from './pages/stats-blood';
+import { StatsGender } from './pages/stats-gender';
 
 function App() {
   return (
-    <main className="flex flex-col items-center justify-center h-screen">
-      <div className="flex flex-col items-center gap-y-4">
-        <div className="inline-flex items-center gap-x-4">
-          <img src={ReactSVG} alt="React Logo" className="w-32" />
-          <span className="text-6xl">+</span>
-          <img src={"/vite.svg"} alt="Vite Logo" className="w-32" />
-        </div>
-        <a
-          href="https://ui.shadcn.com"
-          rel="noopener noreferrer nofollow"
-          target="_blank"
-        >
-          <Badge variant="outline">shadcn/ui</Badge>
-        </a>
-        <CountBtn />
-      </div>
-    </main>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/photo" element={<PhotoPage />} />
+        <Route path="/stats/blood" element={<StatsBlood />} />
+        <Route path="/stats/gender" element={<StatsGender />} />
+        <Route path="/stats/age" element={<StatsAge />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

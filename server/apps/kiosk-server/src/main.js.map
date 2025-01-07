@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../apps/kiosk-server/src/main.ts"],
+  "sourcesContent": ["import './server';\n"],
+  "mappings": "AAAA,oBAAO;",
+  "names": []
+}

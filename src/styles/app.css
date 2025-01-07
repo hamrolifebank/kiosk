@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.footer {
+  border-top: 1px solid #fff;
+  text-align: center;
+  /* negative value of footer height */
+  height: 180px;
+  clear: both;
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+body,
+html {
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+
+.frame {
+  width: 74%;
+  max-width: 74%;
+  margin: 0px auto;
+  align-self: center;
+  padding: 0;
+  border: 14px solid #eee;
+  height: 73dvh; /* Adjust this value as per your requirement */
+  min-height: 300px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.outer {
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  margin: 150px auto 0px;
+}
+
+.smart-blood {
+  position: absolute;
+  margin-left: 69%;
+  margin-top: -120px;
+  color: #d03d3d;
+  text-align: center;
+  font-size: 3em;
+}
+
+.logo {
+  position: absolute;
+  height: 100px;
+  margin-left: -8%;
+  margin-top: -130px;
+}
+
+.total-count {
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+}
+
+.fullscreen-image {
+  width: 100vw;
+  height: auto;
+  object-fit: cover;
+}
+
+.live-text {
+  color: red;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.live-text-dot {
+  margin-right: 10px;
+}

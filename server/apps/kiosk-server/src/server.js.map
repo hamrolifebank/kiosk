@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../../../apps/kiosk-server/src/server.ts"],
+  "sourcesContent": ["import express, { Request, Response } from 'express';\nimport cors from 'cors';\nimport path from 'path';\nimport dotenv from 'dotenv';\ndotenv.config();\nimport { routes } from './routes';\n\nconst app = express();\nconst PORT = 4505;\n\n// Enable CORS for all origins\napp.use(cors());\n\n// Middleware to serve static files from the 'public' folder\napp.use('/api', routes);\napp.use(express.static(path.join(__dirname, '../../../ui')));\napp.use(express.static(path.join(__dirname, '../../../../../../data')));\n\n// Custom fallback for unmatched routes (optional)\napp.use((req: Request, res: Response) => {\n  res.status(404).send('Page not found');\n});\n\n// Start the server\napp.listen(PORT, () => {\n  console.log(`Server is running on http://localhost:${PORT}`);\n});\n"],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;AAAA,qBAA2C;AAC3C,kBAAiB;AACjB,kBAAiB;AACjB,oBAAmB;AAEnB,oBAAuB;AADvB,cAAAA,QAAO,OAAO;AAGd,MAAM,UAAM,eAAAC,SAAQ;AACpB,MAAM,OAAO;AAGb,IAAI,QAAI,YAAAC,SAAK,CAAC;AAGd,IAAI,IAAI,QAAQ,oBAAM;AACtB,IAAI,IAAI,eAAAD,QAAQ,OAAO,YAAAE,QAAK,KAAK,WAAW,aAAa,CAAC,CAAC;AAC3D,IAAI,IAAI,eAAAF,QAAQ,OAAO,YAAAE,QAAK,KAAK,WAAW,wBAAwB,CAAC,CAAC;AAGtE,IAAI,IAAI,CAAC,KAAc,QAAkB;AACvC,MAAI,OAAO,GAAG,EAAE,KAAK,gBAAgB;AACvC,CAAC;AAGD,IAAI,OAAO,MAAM,MAAM;AACrB,UAAQ,IAAI,yCAAyC,IAAI,EAAE;AAC7D,CAAC;",
+  "names": ["dotenv", "express", "cors", "path"]
+}
