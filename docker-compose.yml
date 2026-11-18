@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./server
+    restart: unless-stopped
+    environment:
+      PG_HOST: ${PG_HOST}
+      PG_PORT: ${PG_PORT:-5432}
+      PG_USER: ${PG_USER}
+      PG_PASS: ${PG_PASS}
+      PG_DB: ${PG_DB}
+      EVENT_ID: ${EVENT_ID:-}
+    ports:
+      - "4505:4505"
+
+  frontend:
+    build:
+      context: .
+    restart: unless-stopped
+    depends_on:
+      - backend
+    environment:
+      VITE_API_URL: ${VITE_API_URL:-http://localhost:4505/api}
+    ports:
+      - "${FRONTEND_PORT:-5174}:5173"
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+      - ./index.html:/app/index.html
